@@ -1,0 +1,11 @@
+Trabalhar com rotas é muito facil
+mas o que é uma rota?
+é o caminho que leva a uma função no sistema;
+
+//exemplo rota com função anônima
+Route::get('helloworld', function() {
+  return "Olá mundo";
+ });
+
+também podemos apontar para uma controller e chamar uma função dela
+mas para isso precisamos de uma controller.

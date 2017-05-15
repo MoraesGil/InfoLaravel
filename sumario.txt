@@ -1,0 +1,17 @@
+·	Introdução e Apresentação
+·	O que é uma framework
+·	Iniciando uma aplicação
+·	Estrutura de pastas e Arquivo de Configuração
+·	Migrations
+·	Models
+·	Seeders
+·	Rotas
+·	Views
+·	Template com Blade
+·	Controllers
+·	Formulários
+·	Validação
+
+·	Factories
+·	Query Builder
+·	EloquentPlus Pacotes adicionais...(se der tempo)

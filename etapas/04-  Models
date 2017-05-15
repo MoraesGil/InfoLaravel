@@ -1,0 +1,30 @@
+Os models são os caras que represenção nosso objeto no banco de dados
+é como se uma tabela fosse uma classe onde você pode acessar os atributos
+e realizar um crud,
+para criar o models usamos
+
+php artisan:make:model Contato
+
+ele cria nosso model em App/
+
+agora ja podemos criar um contato através do tinker.
+vamos abrir o tinker
+
+php artisan tinker
+
+App/Contato::create(['nome'=>'Fulano','telefone'=>'3289-1212']);
+
+vamos receber um erro de massAssign, o laravel protege os dados que serão aceitos em um create como este,
+temos que definir os campos que são aceitos com uma propriedade chamada fillable;
+
+protected $fillable = ['nome','telefone'];
+
+agora sim tempos os dados;
+
+$data = array();
+
+App/Contato::all();
+App/Contato::find(id);
+App/Contato::find(id)->delete();
+App/Contato::create(array $data);
+App/Contato::find(id)->update(array $data);

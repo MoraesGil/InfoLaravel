@@ -1,0 +1,6 @@
+Após a instalação do composer
+1-  instalar o composer
+Acesse: http://getcomposer.org/download
+
+2 - Instalação direta via composer
+composer create-project --prefer-dist laravel/laravel curso_laravel "5.3.*"
