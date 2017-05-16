@@ -1,0 +1,14 @@
+
+Quando trabalhamos com rotas nomeadas, todos os links de nosso sistema, ao invés de chamar uma
+URL fixa (como estamos fazendo atualmente), podem chamar uma rota nomeada, e nesse caso, o
+link é gerado dinamicamente de acordo com nossa rota; logo, se em algum momento resolvermos
+alterar nossas rotas, não precisaremos alterar absolutamente nada em nossas views.
+Vamos fazer isso!
+
+// ROTAS NOMEADS
+Route::get('/contatos',[ 'as'='contato.index','uses'=>'ContatoController@index']);//list
+Route::get('/contato/novo',[ 'as'='contato.create','uses'=>'ContatoController@create']);//form
+Route::post('/contato/novo',[ 'as'='contato.store','uses'=>'ContatoController@store']);//grava
+Route::get('/contato/{id}/editar',[ 'as'='contato.edit','uses'=>'ContatoController@edit']);//form
+Route::put('/contato/{id}/editar',[ 'as'='contato.update','uses'=>'ContatoController@update']);//grava
+Route::post('/contato/{id}/excluir',[ 'as'='contato.destroy','uses'=>'ContatoController@destroy']);//func
