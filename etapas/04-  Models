@@ -1,5 +1,5 @@
-Os models são os caras que represenção nosso objeto no banco de dados
-é como se uma tabela fosse uma classe onde você pode acessar os atributos
+Os models/entidades são os caras que represenção nosso objeto no banco de dados
+é como se uma tabela fosse uma classe nosso ORM onde você pode acessar os atributos
 e realizar um crud,
 para criar o models usamos
 

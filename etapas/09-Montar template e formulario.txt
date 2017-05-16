@@ -1,0 +1,68 @@
+para montarmos nosso template é muito simples
+
+Ref: https://laravel.com/docs/5.3/blade
+
+primeiro criamos a base
+<!-- em resources/views/layouts/app.blade.php -->
+
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <title>App Name - @yield('title')</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">InfoLaravel 2017</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="#">Listar</a></li>
+            <li><a href="#">Novo</a></li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      @yield('content')
+
+    </div>
+
+  </div> <!-- /container -->
+
+</body>
+</html>
+
+-----------------------------------------------------------------------------------
+depois usamos a base e colocamos o conteudo
+<!-- em resources/views/lista.blade.php -->
+
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+@section('content')
+  <h1>exemplo</h1>
+  <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+  <p>
+    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+  </p>
+@endsection

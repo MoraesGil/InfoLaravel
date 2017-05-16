@@ -1,0 +1,27 @@
+O Controlador basicamente recebe os eventos disparado pelo usuario nas views
+e comunica com o Entidade(ORM) banco de dados quando necessário
+bom vamos criar nosso controller
+
+php artisan make:controller HelloWorld
+vamos criar o metodo index retornando hello world
+
+e vamos criar uma rota para ele
+Route::get('/login', 'HelloWorld@index')
+
+
+agora vamos criar um controller um pouco diferente para continuarmos nossa aplicação
+php artisan make:controller Contatos --resource
+
+#Nota o "--resource" serve para criar os metodos
+index   = listar
+create  = formulario de cadastro
+store   = gravar
+show    = exibir detalhes
+edit    = formulario de edicao
+update  = atualizar
+delete  = excluir
+
+caso não queira basta nao colocar
+
+agora vamos retornar uma view blade com nosso controller
+return view('helloWorld')

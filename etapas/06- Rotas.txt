@@ -9,3 +9,6 @@ Route::get('helloworld', function() {
 
 também podemos apontar para uma controller e chamar uma função dela
 mas para isso precisamos de uma controller.
+
+podemos ver as rotas no terminal com
+php artisan route:list
