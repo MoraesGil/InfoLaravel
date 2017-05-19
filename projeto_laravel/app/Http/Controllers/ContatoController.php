@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contato;
+
 
 class ContatoController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        $contatos = \App\Contato::all()->take(10);
+        $contatos = Contato::orderBy('nome')->paginate(10);
 
         return view ('contato.lista',['contatos'=>$contatos]);
     }
@@ -25,7 +32,7 @@ class ContatoController extends Controller
      */
     public function create()
     {
-        //
+        return view('contato.form');
     }
 
     /**

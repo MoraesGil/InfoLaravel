@@ -29,3 +29,7 @@ Route::post('/contato/novo','ContatoController@store');//grava
 Route::get('/contato/{id}/editar','ContatoController@edit');//form
 Route::put('/contato/{id}/editar','ContatoController@update');//grava
 Route::get('/contato/{id}/excluir','ContatoController@destroy');//func
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
