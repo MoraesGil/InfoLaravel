@@ -1,30 +1,44 @@
-Os models/entidades são os caras que represenção nosso objeto no banco de dados
-é como se uma tabela fosse uma classe nosso ORM onde você pode acessar os atributos
-e realizar um crud,
-para criar o models usamos
+Os models/entidades são os caras que representam nosso objeto no banco de dados
+é nosso objeto mapiamento relacional (ORM)
 
+===========================================================================
+Criar um model
+-terminal
 php artisan:make:model Contato
 
-ele cria nosso model em App/
+ele cria nosso model na pasta App/
+===========================================================================
+vamos configura-lo
 
-agora ja podemos criar um contato através do tinker.
-vamos abrir o tinker
+protected $fillable = ['nome','telefone']; //são os campos que ele aceita como parametro
+protected $table = 'products';
+
+===========================================================================
+
+
+**já podemos cadastrar um produto com o tinker nosso console de comandos do laravel para acessa-lo usamos
 
 php artisan tinker
 
+e vamos escolher nosso model App/Contato e chamar a funçao estatica create() passando um array de dados ['nome'=>'Fulano','telefone'=>'3289-1212']
+
 App/Contato::create(['nome'=>'Fulano','telefone'=>'3289-1212']);
 
-vamos receber um erro de massAssign, o laravel protege os dados que serão aceitos em um create como este,
-temos que definir os campos que são aceitos com uma propriedade chamada fillable;
+===========================================================================
 
-protected $fillable = ['nome','telefone'];
+funcoes prontas do nosso Model Eloquent
 
-agora sim tempos os dados;
-
-$data = array();
-
+listar tudo
 App/Contato::all();
+
+buscar pelo id
 App/Contato::find(id);
+
+excluir
 App/Contato::find(id)->delete();
-App/Contato::create(array $data);
-App/Contato::find(id)->update(array $data);
+
+criar -> já usamos este
+App/Contato::create($array);
+
+atualizar ->muito parecido
+App/Contato::find(id)->update($array);

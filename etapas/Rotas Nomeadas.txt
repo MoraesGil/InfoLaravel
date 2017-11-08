@@ -5,7 +5,7 @@ link é gerado dinamicamente de acordo com nossa rota; logo, se em algum momento
 alterar nossas rotas, não precisaremos alterar absolutamente nada em nossas views.
 Vamos fazer isso!
 
-// ROTAS NOMEADS
+// ROTAS NOMEADAS
 Route::get('/contatos',[ 'as'='contato.index','uses'=>'ContatoController@index']);//list
 Route::get('/contato/novo',[ 'as'='contato.create','uses'=>'ContatoController@create']);//form
 Route::post('/contato/novo',[ 'as'='contato.store','uses'=>'ContatoController@store']);//grava

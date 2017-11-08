@@ -1,15 +1,18 @@
-Os seeders sao sementes com eles geramos dados para popular nosso banco e ter dados para teste
+Os seeders sao sementes com eles semamos nosso banco de dados
+pode ser com dados reais ou apenas de teste
 
+criando um seeder
 -terminal
 php artisan make:seeder ContatosTableSeeder
 
--vamos criar uma repticao para criar contatos
-
+===========================================================================
 vamos importar um helper chamado faker e nosso Model Contato
 
 use App\Contato;
 use Faker\Factory as Faker;
 
+===========================================================================
+->Nosso código
 
 $faker = Faker::create();
 
@@ -20,14 +23,19 @@ for ($i=0; $i <30 ; $i++) {
     ]);
 }
 
+===========================================================================
 
-em DatabaseSeeder criar uma chamada call para nosso arquivo de Seeder
-// $this->call(ContatosTableSeeder::class);
+Em DatabaseSeeder criar uma chamada  para nosso arquivo de Seeder seja executado
 
+$this->call(ContatosTableSeeder::class);
 
-pronto seed criado agora podemos executar
+===========================================================================
+podemos ter varios seeder todos que tiverem uma chamada em DatabaseSeeder serão executados com
+
 -terminal
 php artisan db:seed
+
+===========================================================================
 
 agora vamos ver no tinker os dados criados
 php artisan tinker

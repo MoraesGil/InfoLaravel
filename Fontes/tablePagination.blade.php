@@ -10,8 +10,7 @@
     @foreach($contatos as  $contato)
       <tr>
         <td>{{$contato->id}}</td>
-        <td>{{$contato->nome}}</td>
-
+        <td>{{$contato->nome}}</td> 
         <td>{{$contato->telefone }}</td>
 
         <td style="text-align:center">

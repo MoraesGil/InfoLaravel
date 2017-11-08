@@ -1,13 +1,22 @@
 Migrations: Os arquivos de migration servem para criação e versionamento do banco de dados
 o bacana é que com o mesmo código podemos criar banco de dados em sqlite, mysql e postgreeSql
 simples é só migrar.
+===========================================================================
+//cmd terminal para criar uma migration php artisan make:migration acao_nome_da_tabela_table
 
--terminal
- php artisan make:migration create_contatos_table
--up
- Schema::create('contatos', function(Blueprint $table){
-      $table->increments('id'); // cria um id autoincremento
-      $table->string('nome', 80); //cria um varchar 255
-      $table->string('telefone'); //cria um var char 255
-      $table->timestamps();
-  });
+php artisan make:migration create_contatos_table
+
+
+===========================================================================
+**cod funcões
+
+//up
+Schema::create('contatos', function(Blueprint $table){
+  $table->increments('id'); // cria um id autoincremento
+  $table->string('nome', 80); //cria um varchar 255
+  $table->string('telefone'); //cria um var char 255
+  $table->timestamps();
+});
+
+//down
+Schema::dropIfExists('users');

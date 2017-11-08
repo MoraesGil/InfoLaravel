@@ -1,10 +1,11 @@
-crie um arquivo com nome de hello.blade.php
+crie um arquivo com nome de lista.blade.php na pasta /resources/views/contato
 
+===========================================================================
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ola mundo</title>
+  <title>Contatos </title>
 
   <!-- Latest compiled and minified Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
@@ -16,22 +17,38 @@ crie um arquivo com nome de hello.blade.php
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-  <h1>Ola Mundo</h1>
+  <h1>Contatos</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>1</td>
+    <td>Doe</td>
+    <td>1991919191</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Moe</td>
+    <td>67189011</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Dooley</td>
+    <td>1231313131</td>
+  </tr>
+  </tbody>
+  </table>
+
 </body>
 </html>
 
 ===========================================================================
-Sintaxe do blade
-{{ $var  }} //echo $var
-@foreach ($array as $element)
-@endforeach
 
-@forelse ($array as $element)
-@empty
-@endforelse
-
-@if (condition)
-@endif
-
-@while (condition)
-@endwhile
+agora vamos pedir a lista de dados para a controller

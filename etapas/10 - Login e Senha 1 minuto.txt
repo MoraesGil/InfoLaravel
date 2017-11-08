@@ -1,0 +1,12 @@
+ Agora vamos montar um esquema de login e senha muito rapido
+
+ -terminal
+ php artisan make:auth
+
+ pronto
+ -Cria LoginController
+ -Cria view de cadastro resources\view\auth\register.blade
+ -Cria View de Login resources\view\auth\login.blade
+ -Cria um Template basico em resources\view\layouts\app.blade
+
+ ===========================================================================

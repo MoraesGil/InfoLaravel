@@ -2,13 +2,21 @@ Trabalhar com rotas é muito facil
 mas o que é uma rota?
 é o caminho que leva a uma função no sistema;
 
-//exemplo rota com função anônima
-Route::get('helloworld', function() {
-  return "Olá mundo";
- });
+../routes/web.php
 
-também podemos apontar para uma controller e chamar uma função dela
-mas para isso precisamos de uma controller.
+===========================================================================
 
-podemos ver a lista de rotas no terminal com
+-terminal ver todas as rotas criadas
 php artisan route:list
+
+===========================================================================
+Nossa primeira ROTA
+
+Route::get('/helloworld',function(){
+  echo "ola mundo";
+});
+
+===========================================================================
+também podemos apontar para uma função do controller
+
+mas para isso precisamos de uma controller.

@@ -2,20 +2,16 @@ O Controlador basicamente recebe os eventos disparado pelo usuario nas views
 e comunica com o Entidade(ORM) banco de dados quando necessário
 bom vamos criar nosso controller
 
-php artisan make:controller HelloController
-vamos criar o metodo index retornando hello world
+-terminal
+php artisan make:controller ContatoController
 
-e vamos criar uma rota para ele
-Route::get('/login', 'HelloController@index')
+e vamos criar uma rota acessar nosso metodo index
 
-agora vamos retornar uma view blade com nosso controller
-return view('helloWorld')
+Route::get('/contatos','ContatoController@index');
 
---------------------------------------------------------------
-agora vamos criar um controller um pouco diferente para continuarmos nossa aplicação
-php artisan make:controller ContatoController --resource
+===========================================================================
+Padrão RESTFull
 
-#Nota o "--resource" serve para criar os metodos
 index   = listar
 create  = formulario de cadastro
 store   = gravar
@@ -24,9 +20,8 @@ edit    = formulario de edicao
 update  = atualizar
 delete  = excluir
 
-é opcional, caso queira usar outros nomes;
 
-e vamos registrar as rotas do nosso ContatoController
+e agora que já sabemos registrar rota vamos registrar as rotas do nosso ContatoController
 
 // ROTAS
 Route::get('/contatos','ContatoController@index');//list
@@ -34,4 +29,12 @@ Route::get('/contato/novo','ContatoController@create');//form
 Route::post('/contato/novo','ContatoController@store');//grava
 Route::get('/contato/{id}/editar','ContatoController@edit');//form
 Route::put('/contato/{id}/editar','ContatoController@update');//grava
-Route::get('/contato/{id}/excluir','ContatoController@destroy');//func
+Route::delete('/contato/{id}/excluir','ContatoController@destroy');//func
+
+===========================================================================
+caso ele não ache sua controller digite cmd
+
+-terminal
+composer dump-autoload
+
+este comando faz com que ele leia todos os arquivos novamente
